@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.pesanan.detail.DetailPesananFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:paddingTop="@dimen/dimens_16">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:text="Tanggal Dipesan :" />
+
+            <TextView
+                android:id="@+id/tv_dipesan"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="4dp"
+                android:textStyle="bold"
+                tools:text="@tools:sample/date/ddmmyy" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="@dimen/dimens_16"
+                android:text="Tanggal Diambil :" />
+
+            <TextView
+                android:id="@+id/tv_diambil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="4dp"
+                android:textStyle="bold"
+                tools:text="@tools:sample/date/ddmmyy" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="@dimen/dimens_16"
+                android:text="Nama Pemesan :" />
+
+            <TextView
+                android:id="@+id/tv_customer_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="4dp"
+                tools:text="@tools:sample/date/ddmmyy"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="@dimen/dimens_16"
+                android:text="NO. HP :" />
+
+            <TextView
+                android:id="@+id/tv_customer_phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="4dp"
+                tools:text="@tools:sample/date/ddmmyy"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="@dimen/dimens_16"
+                android:text="Alamat :" />
+
+            <TextView
+                android:id="@+id/tv_customer_address"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="4dp"
+                tools:text="@tools:sample/date/ddmmyy"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="@dimen/dimens_16"
+                android:text="Status :" />
+
+            <TextView
+                android:id="@+id/tv_order_status"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginTop="4dp"
+                tools:text="@tools:sample/date/ddmmyy"
+                android:textStyle="bold" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_chat_customer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="@dimen/dimens_16"
+                android:layout_marginVertical="16dp"
+                app:icon="@drawable/ic_baseline_chat_24"
+                app:iconGravity="textStart"
+                app:iconPadding="@dimen/dimens_16"
+                android:text="Hubungi Pemesan"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/viewgroup_pembayaran"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="@dimen/dimens_16"
+                android:paddingTop="@dimen/dimens_16">
+
+                <TextView
+                    android:id="@+id/label_pembayaran"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Pembayaran"
+                    android:textSize="16sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/tv_dibayar"
+                    style="@style/TextAppearance.AppCompat.Title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:text="@string/rp"
+                    android:textSize="16sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/label_pembayaran" />
+
+                <ImageView
+                    android:id="@+id/ic_arrow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/ic_baseline_keyboard_arrow_right_24"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:tint="@color/black" />
+
+                <TextView
+                    android:id="@+id/tv_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="8dp"
+                    android:textSize="12sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/ic_arrow"
+                    app:layout_constraintHorizontal_bias="1.0"
+                    app:layout_constraintStart_toEndOf="@+id/tv_dibayar"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:text="Status" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginVertical="12dp"
+                android:background="@color/gray" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_product"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/scrolling_bg"
+                android:nestedScrollingEnabled="false"
+                android:paddingHorizontal="@dimen/dimens_16"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_barang_pesanan" />
+
+            <View
+                android:id="@+id/anchor"
+                android:layout_width="match_parent"
+                android:layout_height="56dp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="@color/gray" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <TextView
+        android:id="@+id/tv_total_s"
+        style="@style/TextAppearance.MaterialComponents.Subtitle1"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_gravity="center_horizontal|bottom"
+        android:background="#fff"
+        android:fitsSystemWindows="true"
+        android:gravity="end"
+        android:padding="@dimen/dimens_16"
+        android:text="@string/total_s"
+        app:layout_anchor="@id/anchor" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

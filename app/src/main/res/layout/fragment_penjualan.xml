@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    tools:context=".ui.penjualan.home.PenjualanFragment">
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipe_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fillViewport="true">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingBottom="64dp">
+
+                <LinearLayout
+                    android:id="@+id/card_penjualan_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:colorPrimary"
+                    android:orientation="vertical"
+                    android:padding="16dp"
+                    app:layout_constraintBottom_toTopOf="@id/card_penjualan_2"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        style="@style/TextAppearance.MaterialComponents.Body1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:fontFamily="@font/poppins"
+                        android:text="@string/penjualan_hari_ini"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:id="@+id/tv_income_today"
+                        style="@style/TextAppearance.MaterialComponents.Headline5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:fontFamily="@font/poppins"
+                        tools:text="@string/rp"
+                        android:textColor="@color/white"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/tv_income_this_month"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="@font/poppins_light"
+                        tools:text="@string/this_month"
+                        android:textColor="@color/white" />
+
+                    <TextView
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="end"
+                        android:drawablePadding="8dp"
+                        android:text="Cek yang belum dibayar"
+                        android:textColor="?colorSecondary"
+                        app:drawableRightCompat="@drawable/ic_baseline_open_in_new_24"
+                        app:drawableTint="?colorSecondary" />
+
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/card_penjualan_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    android:padding="8dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/card_penjualan_1">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="vertical"
+                        android:padding="16dp">
+
+                        <TextView
+                            style="@style/TextAppearance.MaterialComponents.Headline6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:fontFamily="@font/poppins_medium"
+                            android:text="@string/cari_penjualan"
+                            android:textColor="?colorPrimaryVariant" />
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="16dp"
+                            android:hint="Pilih penjual"
+                            app:endIconDrawable="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            app:endIconMode="custom"
+                            app:expandedHintEnabled="false"
+                            app:startIconDrawable="@drawable/ic_baseline_group_24">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tv_seller"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:editable="false"
+                                app:textInputLayoutFocusedRectEnabled="false" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+
+                        <com.google.android.material.textfield.TextInputLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="8dp"
+                            android:hint="Pilih tanggal"
+                            app:endIconDrawable="@drawable/ic_baseline_keyboard_arrow_right_24"
+                            app:endIconMode="custom"
+                            app:expandedHintEnabled="false"
+                            app:startIconDrawable="@drawable/ic_baseline_date_range_24">
+
+                            <com.google.android.material.textfield.TextInputEditText
+                                android:id="@+id/tv_date"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:editable="false"
+                                app:textInputLayoutFocusedRectEnabled="false" />
+                        </com.google.android.material.textfield.TextInputLayout>
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content">
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_search_reset"
+                                style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                                android:layout_width="48dp"
+                                android:layout_height="60dp"
+                                android:layout_marginStart="0dp"
+                                android:layout_marginTop="8dp"
+                                app:icon="@drawable/ic_baseline_settings_backup_restore_24"
+                                app:iconGravity="textStart"
+                                app:iconPadding="0dp"
+                                app:iconTint="@color/material_on_surface_disabled" />
+
+                            <com.google.android.material.button.MaterialButton
+                                android:id="@+id/btn_search_sales"
+                                android:layout_width="match_parent"
+                                android:layout_height="60dp"
+                                android:layout_marginStart="8dp"
+                                android:layout_marginTop="8dp"
+                                android:text="Cari"
+                                android:textAllCaps="false" />
+                        </LinearLayout>
+
+                    </LinearLayout>
+                </androidx.cardview.widget.CardView>
+
+
+                <TextView
+                    android:id="@+id/label_tidak_ada_penjualan"
+                    style="@style/TextAppearance.MaterialComponents.Headline5"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@color/gray"
+                    android:fontFamily="@font/poppins_medium"
+                    android:gravity="center"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="32dp"
+                    android:text="Tidak ada penjualan"
+                    android:textColor="?colorPrimaryVariant"
+                    android:textStyle="bold"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@+id/card_penjualan_2" />
+
+                <View
+                    android:id="@+id/margin16"
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/dimens_16"
+                    app:layout_constraintTop_toBottomOf="@+id/label_tidak_ada_penjualan" />
+
+                <TextView
+                    android:id="@+id/label_belum_direkap"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/label_belum_direkap"
+                    android:textColor="?colorPrimaryVariant"
+                    app:layout_constraintTop_toBottomOf="@+id/margin16" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_belum_direkap"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/scrolling_bg"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="16dp"
+                    app:layout_constraintTop_toBottomOf="@+id/label_belum_direkap"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_penjualan" />
+
+                <TextView
+                    android:id="@+id/label_belum_dibayar"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/label_belum_dibayar"
+                    android:textColor="?colorPrimaryVariant"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_belum_direkap" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_belum_dibayar"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/scrolling_bg"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="16dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintTop_toBottomOf="@+id/label_belum_dibayar"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_penjualan" />
+
+                <TextView
+                    android:id="@+id/label_selesai"
+                    style="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/gray"
+                    android:fontFamily="@font/poppins_medium"
+                    android:paddingHorizontal="16dp"
+                    android:paddingVertical="8dp"
+                    android:text="@string/label_selesai"
+                    android:textColor="?colorPrimaryVariant"
+                    app:layout_constraintTop_toBottomOf="@+id/rv_belum_dibayar" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv_selesai"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/scrolling_bg"
+                    android:clipToPadding="false"
+                    android:nestedScrollingEnabled="false"
+                    android:paddingHorizontal="8dp"
+                    android:paddingVertical="16dp"
+                    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/label_selesai"
+                    app:layout_constraintVertical_bias="0.0"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/item_penjualan" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:srcCompat="@drawable/ic_baseline_add_24" />
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet_seller"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:background="@drawable/shape_bg_bottomsheet"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/dimens_16"
+        android:paddingBottom="@dimen/dimens_16"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:behavior_skipCollapsed="true"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimens_16"
+            android:background="@drawable/shape_bg_search"
+            android:backgroundTint="@color/gray_dark" />
+
+        <View
+            android:layout_width="64dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/shape_bg_search"
+            android:backgroundTint="@color/gray_dark" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_bottom_sheet_seller"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/bottom_sheet_tanggal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_bg_bottomsheet"
+        android:orientation="vertical"
+        android:paddingHorizontal="@dimen/dimens_16"
+        android:paddingBottom="@dimen/dimens_16"
+        app:behavior_hideable="true"
+        app:behavior_peekHeight="0dp"
+        app:behavior_skipCollapsed="true"
+        app:layout_behavior="com.google.android.material.bottomsheet.BottomSheetBehavior">
+
+        <View
+            android:layout_width="80dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="@dimen/dimens_16"
+            android:background="@drawable/shape_bg_search"
+            android:backgroundTint="@color/gray_dark" />
+
+        <View
+            android:layout_width="64dp"
+            android:layout_height="4dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="8dp"
+            android:background="@drawable/shape_bg_search"
+            android:backgroundTint="@color/gray_dark" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_bottom_sheet_date"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

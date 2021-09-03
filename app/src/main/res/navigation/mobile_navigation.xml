@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_penjualan">
+
+    <navigation
+        android:id="@+id/nav_penjualan"
+        android:label="@string/menu_penjualan"
+        app:startDestination="@id/penjualanFragment">
+        <fragment
+            android:id="@+id/penjualanFragment"
+            android:name="com.kencana.titipjual.ui.penjualan.home.PenjualanFragment"
+            android:label="@string/menu_penjualan"
+            tools:layout="@layout/fragment_penjualan">
+            <action
+                android:id="@+id/action_penjualanFragment_to_detailPenjualanFragment"
+                app:destination="@id/detailPenjualanFragment"
+                app:launchSingleTop="true" />
+            <action
+                android:id="@+id/action_penjualanFragment_to_addPenjualanFragment"
+                app:destination="@id/addPenjualanFragment"
+                app:launchSingleTop="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/addPenjualanFragment"
+            android:name="com.kencana.titipjual.ui.penjualan.add.AddPenjualanFragment"
+            android:label="Tambah Penjualan"
+            tools:layout="@layout/fragment_add_penjualan">
+            <action
+                android:id="@+id/action_addPenjualanFragment_to_selectBarangFragment"
+                app:destination="@id/selectBarangFragment"
+                app:launchSingleTop="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/detailPenjualanFragment"
+            android:name="com.kencana.titipjual.ui.penjualan.detail.DetailPenjualanFragment"
+            android:label="Detail penjualan"
+            tools:layout="@layout/fragment_detail_penjualan">
+            <argument
+                android:name="penjualan"
+                app:argType="com.kencana.titipjual.data.response.PenjualanItem" />
+            <action
+                android:id="@+id/action_detailPenjualanFragment_to_pembayaranFragment"
+                app:destination="@id/pembayaranFragment"
+                app:launchSingleTop="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/selectBarangFragment"
+            android:name="com.kencana.titipjual.ui.penjualan.add.SelectBarangPenjualanFragment"
+            android:label="Pilih Barang"
+            tools:layout="@layout/fragment_select_barang">
+            <action
+                android:id="@+id/action_selectBarangFragment_to_addPenjualanFragment"
+                app:destination="@id/addPenjualanFragment"
+                app:popUpTo="@id/addPenjualanFragment"
+                app:popUpToInclusive="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/pembayaranFragment"
+            android:name="com.kencana.titipjual.ui.penjualan.pembayaran.PembayaranPenjualanFragment"
+            android:label="Pembayaran Penjualan"
+            tools:layout="@layout/fragment_pembayaran">
+            <action
+                android:id="@+id/action_pembayaranFragment_to_detailPenjualanFragment"
+                app:destination="@id/detailPenjualanFragment"
+                app:popUpTo="@id/detailPenjualanFragment"
+                app:popUpToInclusive="true" />
+        </fragment>
+    </navigation>
+    <navigation
+        android:id="@+id/nav_pesanan"
+        app:startDestination="@id/pesananFragment">
+        <fragment
+            android:id="@+id/pesananFragment"
+            android:name="com.kencana.titipjual.ui.pesanan.home.PesananFragment"
+            android:label="Pesanan"
+            tools:layout="@layout/fragment_pesanan">
+            <action
+                android:id="@+id/action_pesananFragment_to_addPesananFragment"
+                app:destination="@id/addPesananFragment"
+                app:launchSingleTop="true" />
+            <action
+                android:id="@+id/action_pesananFragment_to_detailPesananFragment"
+                app:destination="@id/detailPesananFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/addPesananFragment"
+            android:name="com.kencana.titipjual.ui.pesanan.add.AddPesananFragment"
+            android:label="Tambah Pesanan"
+            tools:layout="@layout/fragment_add_pesanan">
+            <action
+                android:id="@+id/action_addPesananFragment_to_selectBarangPesananFragment"
+                app:destination="@id/selectBarangPesananFragment"
+                app:launchSingleTop="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/selectBarangPesananFragment"
+            android:name="com.kencana.titipjual.ui.pesanan.add.SelectBarangPesananFragment"
+            android:label="Pilih barang"
+            tools:layout="@layout/fragment_select_barang"/>
+        <fragment
+            android:id="@+id/detailPesananFragment"
+            android:name="com.kencana.titipjual.ui.pesanan.detail.DetailPesananFragment"
+            android:label="Detail Pesanan"
+            tools:layout="@layout/fragment_detail_pesanan" >
+            <argument
+                android:name="pesanan"
+                app:argType="com.kencana.titipjual.data.response.PesananItem" />
+            <action
+                android:id="@+id/action_detailPesananFragment_to_pembayaranPesananFragment"
+                app:destination="@id/pembayaranPesananFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/pembayaranPesananFragment"
+            android:name="com.kencana.titipjual.ui.pesanan.pembayaran.PembayaranPesananFragment"
+            android:label="Pembayaran Pesanan"
+            tools:layout="@layout/fragment_pembayaran" >
+            <action
+                android:id="@+id/action_pembayaranPesananFragment_to_detailPesananFragment"
+                app:destination="@id/detailPesananFragment"
+                app:popUpTo="@id/detailPesananFragment"
+                app:popUpToInclusive="true" />
+        </fragment>
+    </navigation>
+    <navigation
+        android:id="@+id/nav_product"
+        app:startDestination="@id/productFragment">
+        <fragment
+            android:id="@+id/productFragment"
+            android:name="com.kencana.titipjual.ui.produk.ProdukFragment"
+            android:label="Produk"
+            tools:layout="@layout/master_list">
+            <action
+                android:id="@+id/action_productFragment_to_formProductFragment"
+                app:destination="@id/formProductFragment"
+                app:launchSingleTop="true" />
+            <action
+                android:id="@+id/action_productFragment_to_detailProductFragment"
+                app:destination="@id/detailProductFragment"
+                app:launchSingleTop="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/formProductFragment"
+            android:name="com.kencana.titipjual.ui.produk.FormProductFragment"
+            tools:layout="@layout/fragment_form_product">
+            <argument
+                android:name="type"
+                android:defaultValue="add"
+                app:argType="com.kencana.titipjual.utils.TYPE" />
+            <action
+                android:id="@+id/action_formProductFragment_to_productFragment"
+                app:destination="@id/productFragment"
+                app:popUpTo="@id/productFragment"
+                app:popUpToInclusive="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/detailProductFragment"
+            android:name="com.kencana.titipjual.ui.produk.DetailProductFragment"
+            android:label="Detail Produk"
+            tools:layout="@layout/fragment_detail_product">
+            <action
+                android:id="@+id/action_detailProductFragment_to_formProductFragment"
+                app:destination="@id/formProductFragment"
+                app:launchSingleTop="true" />
+            <action
+                android:id="@+id/action_detailProductFragment_to_nav_product"
+                app:destination="@id/nav_product"
+                app:popUpTo="@id/nav_product" />
+        </fragment>
+    </navigation>
+    <navigation
+        android:id="@+id/nav_penjual"
+        app:startDestination="@id/penjualFragment">
+        <fragment
+            android:id="@+id/penjualFragment"
+            android:name="com.kencana.titipjual.ui.penjual.PenjualFragment"
+            android:label="Penjual"
+            tools:layout="@layout/master_list">
+            <action
+                android:id="@+id/action_penjualFragment_to_detailPenjualFragment"
+                app:destination="@id/detailPenjualFragment"
+                app:launchSingleTop="true" />
+            <action
+                android:id="@+id/action_penjualFragment_to_formPenjualFragment"
+                app:destination="@id/formPenjualFragment"
+                app:launchSingleTop="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/detailPenjualFragment"
+            android:name="com.kencana.titipjual.ui.penjual.DetailPenjualFragment"
+            android:label="Detail Penjual"
+            tools:layout="@layout/fragment_detail_penjual">
+            <action
+                android:id="@+id/action_detailPenjualFragment_to_formPenjualFragment"
+                app:destination="@id/formPenjualFragment"
+                app:launchSingleTop="true" />
+        </fragment>
+        <fragment
+            android:id="@+id/formPenjualFragment"
+            android:name="com.kencana.titipjual.ui.penjual.FormPenjualFragment"
+            android:label="fragment_form_penjualan"
+            tools:layout="@layout/fragment_form_penjual">
+            <argument
+                android:name="type"
+                app:argType="com.kencana.titipjual.utils.TYPE" />
+            <action
+                android:id="@+id/action_formPenjualFragment_to_penjualFragment"
+                app:destination="@id/penjualFragment"
+                app:popUpTo="@id/penjualFragment"
+                app:popUpToInclusive="true" />
+        </fragment>
+    </navigation>
+</navigation>

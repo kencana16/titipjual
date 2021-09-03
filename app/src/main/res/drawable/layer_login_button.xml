@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="oval">
+            <gradient
+                android:angle="360"
+                android:endColor="@color/blue_700"
+                android:startColor="@color/blue_200" />
+            <stroke
+                android:width="3dp"
+                android:color="@android:color/white" />
+        </shape>
+    </item>
+    <item
+        android:bottom="24dp"
+        android:drawable="@drawable/ic_baseline_arrow_forward_24"
+        android:left="24dp"
+        android:right="24dp"
+        android:top="24dp" />
+</layer-list>

@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.penjual.DetailPenjualFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingVertical="@dimen/dimens_16">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:text="Nama Penjual :"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_seller_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Nama Produk" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:layout_marginTop="@dimen/dimens_16"
+            android:text="No. Telepon / Whatsapp:"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_seller_phone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Nama Produk" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:layout_marginTop="@dimen/dimens_16"
+            android:text="Alamat :"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_seller_address"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:layout_marginTop="4dp"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            tools:text="Nama Produk" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:orientation="horizontal">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_delete"
+                android:layout_width="42dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimens_16"
+                android:backgroundTint="#FF0000"
+                android:textAllCaps="false"
+                app:icon="@drawable/ic_baseline_delete_forever_24"
+                app:iconGravity="textStart"
+                app:iconPadding="0dp" />
+
+            <Button
+                android:id="@+id/btn_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="@dimen/dimens_16"
+                android:text="Edit"
+                android:textAllCaps="false" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_dibuat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:layout_marginTop="8dp"
+            android:text="Dibuat : - "
+            android:textAlignment="textEnd"
+            android:textSize="10sp" />
+
+        <TextView
+            android:id="@+id/tv_diubah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:layout_marginTop="4dp"
+            android:text="Diubah : - "
+            android:textAlignment="textEnd"
+            android:textSize="10sp" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/dimens_16"
+            android:background="@color/gray"
+            android:padding="@dimen/dimens_16"
+            android:text="Penjualan"
+            android:textColor="@color/black"
+            android:visibility="invisible" />
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="@dimen/dimens_16"
+            android:layout_marginTop="@dimen/dimens_16">
+
+            <TextView
+                android:id="@+id/label_penjualan_harian"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dimens_16"
+                android:text="Rata-rata penjualan harian"
+                android:textColor="@color/black"
+                android:visibility="invisible"
+                app:layout_constraintEnd_toStartOf="@+id/tv_penjualan_harian"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_penjualan_harian"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/label_penjualan_harian"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/label_penjualan_harian"
+                tools:text="120" />
+
+            <TextView
+                android:id="@+id/label_penjualan_mingguan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="@dimen/dimens_16"
+                android:text="Rata-rata penjualan hari %s"
+                android:textColor="@color/black"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/tv_penjualan_harian"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/label_penjualan_harian" />
+
+            <TextView
+                android:id="@+id/tv_penjualan_mingguan"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/black"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="@id/label_penjualan_mingguan"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="@id/label_penjualan_mingguan"
+                tools:text="120" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

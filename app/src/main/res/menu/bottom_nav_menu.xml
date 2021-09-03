@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/nav_penjualan"
+        android:icon="@drawable/ic_baseline_point_of_sale_24"
+        android:title="@string/menu_penjualan" />
+    <item
+        android:id="@+id/nav_pesanan"
+        android:icon="@drawable/ic_baseline_ballot_24"
+        android:title="@string/menu_pesanan" />
+    <item
+        android:id="@+id/nav_product"
+        android:icon="@drawable/ic_baseline_collections_24"
+        android:title="@string/menu_produk" />
+    <item
+        android:id="@+id/nav_penjual"
+        android:icon="@drawable/ic_baseline_group_24"
+        android:title="@string/menu_penjual" />
+
+</menu>
